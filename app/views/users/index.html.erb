@@ -14,16 +14,12 @@
       <tr>
         <% @users.each do |user| %>
           <td><p class="prof-name"> <%= user.profile_name %> </p></td>
-          <td><p class="photo"> <%= wit.created_at %></p> <%= link_to 'Destroy', wit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><p class="photo"> <%= user.photo_url %></p> </td>
       </tr>
         <% end %>
     </div>
 </table>
 
-<%= form_for(@wit, remote: true, id: 'new-wit') do |f| %>
-    <%= f.label :message %>
-    <%= f.text_field :message %>
-    <%= f.submit %>
-<% end %>
+
 
 
