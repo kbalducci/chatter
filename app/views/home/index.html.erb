@@ -1,16 +1,14 @@
-<h1>Welcome<h1>
-<div class="col-md-4">
+<h1>Welcome</h1>
   <h3>Welcome to Chatter</h3>
   <p>The chattiest place on the web</p>
 
-</div>
 
 <div class="col-md-8"></div>
 <ul>
   <% @chats.each do |chat| %>
       <li>
-        <%= link_to chat.message, chat_path(chat) %> | <small> <%= time_ago_in_words(chat.created_at) %> </small>
+        <%= chat.message %>
+
       </li>
   <% end %>
 </ul>
-<div></div>

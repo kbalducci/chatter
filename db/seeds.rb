@@ -5,3 +5,14 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+5.times do
+  user = User.create(first_name: Faker::Name.first_name,
+                    last_name: Faker::Name.last_name,
+                    profile_name: Faker::Internet.user_name,
+                    photo_url: Faker::Avatar.image,
+                    location: Faker::Address.city,
+                    bio: Faker::Lorem.paragraph)
+  3.times do
+    user.chats.create(message: Faker::Lorem.sentence)
+  end
+end
