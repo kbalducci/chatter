@@ -1,0 +1,24 @@
+<h1>Viewing All Users</h1>
+<p id="notice"><%= notice %></p>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><h3>Users</h3></th>
+      <th colspan="12"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= link_to user.profile_name, user %></td>
+        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%= link_to 'New User', new_user_path %>
