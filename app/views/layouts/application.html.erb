@@ -9,15 +9,18 @@
 <body>
 <div class="container">
   <nav>
-  <ul class="nav nav-pills">
-    <li role="presentation" class="active"><%= link_to 'Home', root_path %></li>
-    <li role="presentation"><%= link_to 'View All Users', users_path %></li>
-    <li role="presentation">Become A User
-     <%= render 'form' %>
-    </li>
-    <li role="presentation">Create New Chat<%= render 'chatform' %></li>
-  </ul>
+    <ul class="nav nav-pills">
+      <li role="presentation" class="active"><%= link_to 'Home', root_path %></li>
+      <li role="presentation"><%= link_to 'View All Users', users_path %></li>
+    </ul>
   </nav>
+
+  <div class="body">
+  </div>
+
+  <div class="footer">
+  </div>
+
 
   <%= yield %>
 </div>

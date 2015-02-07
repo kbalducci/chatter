@@ -1,14 +1,20 @@
+<div class='container'>
 <h1>Welcome</h1>
   <h3>Welcome to Chatter</h3>
   <p>The chattiest place on the web</p>
 
-
-<div class="col-md-8"></div>
+<li role="presentation">Become A User
+     <%= render 'form' %>
+    </li>
+    <li role="presentation">Create New Chat<%= render 'chatform' %></li>
+<!-- <div class="col-md-8"></div> -->
 <ul>
   <% @chats.each do |chat| %>
       <li>
         <%= chat.message %>
+        <%= chat.created_at %>
 
       </li>
   <% end %>
 </ul>
+</div>

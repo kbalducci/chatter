@@ -1,24 +1,29 @@
 <h1>Viewing All Users</h1>
-<p id="notice"><%= notice %></p>
+<% if flash[:notice] || flash[:alert] %>
+    <div class='flash'><%= flash[:notice] || flash[:alert] %></div>
+<% end %>
 
-<table class="table table-striped">
+<table class="table table-hover">
   <thead>
     <tr>
-      <th><h3>Users</h3></th>
-      <th colspan="12"></th>
+      <th colspan="8"></th>
     </tr>
-  </thead>
-
+  <thead>
   <tbody>
-    <% @users.each do |user| %>
+    <div id='users-container'>
       <tr>
-        <td><%= link_to user.profile_name, user %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% @users.each do |user| %>
+          <td><p class="prof-name"> <%= user.profile_name %> </p></td>
+          <td><p class="photo"> <%= wit.created_at %></p> <%= link_to 'Destroy', wit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-    <% end %>
-  </tbody>
+        <% end %>
+    </div>
 </table>
 
-<br>
-<%= link_to 'New User', new_user_path %>
+<%= form_for(@wit, remote: true, id: 'new-wit') do |f| %>
+    <%= f.label :message %>
+    <%= f.text_field :message %>
+    <%= f.submit %>
+<% end %>
+
+
