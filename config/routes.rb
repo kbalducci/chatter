@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   get 'users/create'
 
-
+  get 'users/profile' => 'users/id'
 
   # get '/users'=>"users#index"
 

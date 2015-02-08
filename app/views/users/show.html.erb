@@ -1,0 +1,23 @@
+<p id="notice"> <%= notice %></p>
+<h1>Profile Page</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+
+      <span class="pic"> <%= link_to(image_tag(@user.photo_url), @user) %></span>
+      <p class="profile-name"> Profile Name: <%= @user.profile_name %> </p>
+      <p class="name"> Name: <%= @user.first_name %> <%= @user.last_name %></p>
+      <p class="location"> Location: <%= @user.location %></p>
+      <p class="bio"> Bio: <%= @user.bio %></p>
+    </div>
+    </div>
+    <div class="col-md-8">
+      <p class="chats">
+      <% @user.chats.each do |chat| %>
+      <%= chat.message %> </p>
+      <% end %>
+
+    </div>
+  </div>
+</div>

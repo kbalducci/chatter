@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [ :edit, :update, :destroy]
 
   def index
     @users = User.all
@@ -7,6 +7,13 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:id])
+    # @user = user.where(user_id:@user.id)
+    chats = Chat.all
+    @chats = chats.where(user_id:@user_id)
+    # @user = User.first
+    # @chats = Chats.all
+    # chats = chats.where(user_id:@user)
   end
 
   def delete

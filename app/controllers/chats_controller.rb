@@ -6,6 +6,12 @@ class ChatsController < ApplicationController
 
   end
 
+  # def show
+  #   @user = User.find(params[:id])
+  #   chats = Chat.all
+  #   @chats = chats.where(user_id:@user_id)
+  # end
+
   def create
     @chat = Chat.new(chat_params)
 
@@ -44,7 +50,7 @@ class ChatsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def chat_params
-      params.require(:user).permit(:message)
+      params.require(:user).permit(:user_id, :message)
     end
 end
 
