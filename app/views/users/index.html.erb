@@ -1,3 +1,4 @@
+<div class='container'>
 <h1>Viewing All Users</h1>
 <% if flash[:notice] || flash[:alert] %>
     <div class='flash'><%= flash[:notice] || flash[:alert] %></div>
@@ -8,7 +9,7 @@
     <tr>
       <th colspan="8"></th>
     </tr>
-  <thead>
+  </thead>
   <tbody>
     <div id='users-container'>
       <tr>
@@ -18,7 +19,10 @@
       </tr>
         <% end %>
     </div>
-</table>
+  </tbody>
+  </table>
+  </div>
+
 
 
 

@@ -12,7 +12,7 @@
                     photo_url: Faker::Avatar.image,
                     location: Faker::Address.city,
                     bio: Faker::Lorem.paragraph)
-  3.times do
+  10.times do
     user.chats.create(message: Faker::Lorem.sentence)
   end
 end
