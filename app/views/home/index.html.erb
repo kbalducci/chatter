@@ -1,20 +1,31 @@
+<div class="stripe">
+
+
+<h1 class="title">Let's Chat!</h1>
+</div>
 <div class='container'>
-<h1>Welcome</h1>
-  <h3>Welcome to Chatter</h3>
-  <p>The chattiest place on the web</p>
+  <div class="row">
+    <div class="col-md-3">
+    <br />
+    <h3 role="presentation">Become A User</h3>
+     <p><%= render 'form' %></p>
 
-<li role="presentation">Become A User
-     <%= render 'form' %>
-    </li>
-    <li role="presentation">Create New Chat<%= render 'chatform' %></li>
-<!-- <div class="col-md-8"></div> -->
-<ul>
-  <% @chats.each do |chat| %>
-      <li>
-        <p><%= chat.message %></p>
-        <p class="time-stamp"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> Created <%= time_ago_in_words(chat.created_at) %> ago</p>
+    <h3 role="presentation">Create New Chat</h3>
+    <p><%= render 'chatform' %></p>
+    </div>
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-7">
+      <h3> Chats</h3><br />
 
-      </li>
-  <% end %>
-</ul>
+      <% @chats.each do |chat| %>
+
+            <p class="chats-main"><%= chat.message %></p>
+            <p class="time-stamp"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> Created <%= time_ago_in_words(chat.created_at) %> ago</p>
+
+
+      <% end %>
+    </div>
+
+
 </div>

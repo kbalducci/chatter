@@ -1,8 +1,10 @@
+<div class="stripe">
+
+
+<h1 class="title">Chatter Users</h1>
+</div>
+
 <div class='container'>
-<h1>Viewing All Users</h1>
-<% if flash[:notice] || flash[:alert] %>
-    <div class='flash'><%= flash[:notice] || flash[:alert] %></div>
-<% end %>
 
 <table class="table table-hover">
   <thead>
@@ -14,7 +16,7 @@
     <div id='users-container'>
       <tr>
         <% @users.each do |user| %>
-          <td><p class="prof-name"> <%= user.profile_name %> </p></td>
+          <td><span class="glyphicon glyphicon-user" aria-hidden="true"></span><p class="prof-name"> <%= link_to user.profile_name, user_path(user) %><%=  %> </p></td>
           <td><p class="photo"> <%= link_to(image_tag(user.photo_url), user) %></p> </td>
       </tr>
         <% end %>

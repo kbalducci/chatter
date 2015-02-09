@@ -1,6 +1,17 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 
+.nav-title {
+  color: #FFFFFF;
+  display: inline-block;
+  float: right;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.btn {
+  margin-top: 15px;
+}
 body { padding-top: 50px; }
 
 .title {
@@ -16,6 +27,10 @@ body { padding-top: 50px; }
   margin-top: 0px;
 }
 
+.chats-main {
+  font-size: 18px;
+}
+
 .col-md-7 {
   padding-top: 25px;
 }
@@ -26,4 +41,8 @@ body { padding-top: 50px; }
 
 .time-stamp {
   margin-left: 20px;
+}
+
+.prof-name {
+  font-size: 24px;
 }
