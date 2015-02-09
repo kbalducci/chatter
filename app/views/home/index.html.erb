@@ -10,7 +10,23 @@
     <h3 role="presentation">Become A User</h3>
      <p><%= render 'form' %></p>
     <h3 role="presentation">Create New Chat</h3>
-    <p><%= render 'chatform' %></p>
+    <div id="chatform">
+      <p><%= render 'chatform' %></p>
+    </div>
+
+    <script type="text/javascript">
+      jQuery(function($) {
+         $("#chatform")
+           .on("ajax:loading", console.log('loading'))
+           .on("ajax:complete", console.log('complete'))
+           .on("ajax:success", function(event, data, status, xhr) {
+             console.log(data);
+           })
+           .on("ajax:failure", function(xhr, status, error) {
+             console.log(error);
+           });
+       });
+</script>
 
 </div>
     <div class="col-md-2">
@@ -30,3 +46,4 @@
 
 
 </div>
+
