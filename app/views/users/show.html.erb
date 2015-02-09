@@ -1,25 +1,33 @@
 <p id="notice"> <%= notice %></p>
+
+
+<div class="stripe">
+
+
+<h1 class="title"><%= @user.profile_name.capitalize %>'s Profile Page</h1>
+</div>
+
 <div class="container">
-<h1>Profile Page</h1>
-
-
   <div class="row">
     <div class="col-md-3">
 
       <span class="pic"> <%= link_to(image_tag(@user.photo_url), @user) %></span>
-      <p class="profile-name"> Profile Name: <%= @user.profile_name %> </p>
-      <p class="name"> Name: <%= @user.first_name %> <%= @user.last_name %></p>
-      <p class="location"> Location: <%= @user.location %></p>
-      <p class="bio"> Bio: <%= @user.bio %></p>
+      <p class="profile-name"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span><strong> Profile Name: </strong><%= @user.profile_name %> </p>
+      <p class="name"><span class="glyphicon glyphicon-user" aria-hidden="true"></span><strong>Name: </strong><%= @user.first_name %> <%= @user.last_name %></p>
+      <p class="location"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span><strong> Location: </strong><%= @user.location %></p>
+      <p class="bio"><span class="glyphicon glyphicon-book" aria-hidden="true"></span><strong> Bio: </strong><%= @user.bio %></p>
     </div>
 
     <div class="col-md-1">
     </div>
 
     <div class="col-md-7">
-      <p class="chats">
+    <h3> <%= @user.profile_name.capitalize %>'s Chats</h3><br />
       <% @user.chats.each do |chat| %>
+      <p class="chats">
+      <span class="glyphicon glyphicon-phone" aria-hidden="true"></span>
       <%= chat.message %> </p>
+      <p class="time-stamp"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> Created <%= time_ago_in_words(chat.created_at) %> ago</p>
       <% end %>
 
     </div>

@@ -11,8 +11,8 @@
 <ul>
   <% @chats.each do |chat| %>
       <li>
-        <%= chat.message %>
-        <%= chat.created_at %>
+        <p><%= chat.message %></p>
+        <p class="time-stamp"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> Created <%= time_ago_in_words(chat.created_at) %> ago</p>
 
       </li>
   <% end %>

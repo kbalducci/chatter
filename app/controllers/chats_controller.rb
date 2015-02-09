@@ -6,11 +6,6 @@ class ChatsController < ApplicationController
 
   end
 
-  # def show
-  #   @user = User.find(params[:id])
-  #   chats = Chat.all
-  #   @chats = chats.where(user_id:@user_id)
-  # end
 
   def create
     @chat = Chat.new(chat_params)

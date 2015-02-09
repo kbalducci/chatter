@@ -7,14 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div class="container">
-  <nav>
-    <ul class="nav nav-pills">
-      <li role="presentation" class="active"><%= link_to 'Home', root_path %></li>
-      <li role="presentation"><%= link_to 'View All Users', users_path %></li>
-    </ul>
+
+    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
+    <div class="container">
+      <button type="button" class="btn btn-default navbar-btn"><%= link_to 'Home', root_path %></button>
+      <button type="button" class="btn btn-default navbar-btn"><%= link_to 'View All Users', users_path %></button>
+
+    </div>
   </nav>
-</div>
 
 
     <%= yield %>

@@ -1,2 +1,29 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
+
+body { padding-top: 50px; }
+
+.title {
+  text-align: center;
+  padding-top: 60px;
+  color: #67689A;
+}
+
+.stripe {
+  display: block;
+  height: 150px;
+  background-color: #30C6B5;
+  margin-top: 0px;
+}
+
+.col-md-7 {
+  padding-top: 25px;
+}
+
+.chats {
+  font-size: 18px;
+}
+
+.time-stamp {
+  margin-left: 20px;
+}
