@@ -5,11 +5,13 @@ class HomeController < ApplicationController
     @user = User.first
     # @user = User.find(params[:id])
     # @chat = Chat.new
-    @chats = Chat.all.order(:created_at)
+    @chats = Chat.all.order("created_at DESC")
     @users = User.all
     # @chats = chats.where(user_id:@user_id)
     # chats = Chat.all
   end
+
+
 
   def set_new_user
     @new_user = User.new
@@ -24,12 +26,27 @@ class HomeController < ApplicationController
     @chat = Chat.new
   end
 
+  def post_chat
+    @chat = Chat.new(chat_params)
+    user = User.find(params[:user_id])
+    @chat.user_id = user.id
+    respond_to do |format|
+      if @chat.save
+        format.html { redirect_to root_path, notice: 'Chat was successfully created.' }
+        format.json { render :show, status: :created, location: @chat }
+      else
+        format.html { render :new }
+        format.json { render json: @chat.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   def create
     @user = User.new(user_params)
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        format.html { render chats_index_path, notice: 'User was successfully created.' }
         format.json { render json: @user, status: :created, location: @user }
       else
         format.html { render "home/index" }

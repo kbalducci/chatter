@@ -6,13 +6,18 @@ class ChatsController < ApplicationController
 
   end
 
+  def new
+    set_user
+    set_new_chat
+  end
 
   def create
     @chat = Chat.new(chat_params)
-
+    user = User.find(params[:user_id])
+    @chat.user_id = user.id
     respond_to do |format|
       if @chat.save
-        format.html { redirect_to @chat, notice: 'Chat was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Chat was successfully created.' }
         format.json { render :show, status: :created, location: @chat }
       else
         format.html { render :new }
@@ -43,9 +48,16 @@ class ChatsController < ApplicationController
       @chat = Chat.find(params[:id])
     end
 
+    def set_user
+      @user = User.find(params[:user_id])
+    end
+
+    def set_new_chat
+      @new_chat = Chat.new
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     def chat_params
-      params.require(:user).permit(:user_id, :message)
+      params.require(:chat).permit(:message, :user_id)
     end
 end
 

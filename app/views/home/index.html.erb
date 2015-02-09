@@ -9,10 +9,10 @@
     <br />
     <h3 role="presentation">Become A User</h3>
      <p><%= render 'form' %></p>
-
     <h3 role="presentation">Create New Chat</h3>
     <p><%= render 'chatform' %></p>
-    </div>
+
+</div>
     <div class="col-md-2">
     </div>
     <div class="col-md-7">
@@ -21,7 +21,8 @@
       <% @chats.each do |chat| %>
 
             <p class="chats-main"><%= chat.message %></p>
-            <p class="time-stamp"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> Created <%= time_ago_in_words(chat.created_at) %> ago</p>
+            <p class="time-stamp"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> Created <%= time_ago_in_words(chat.created_at) %> ago by: <span class="prof"><%= link_to chat.user.profile_name, user_path(chat.user) %></span></p>
+
 
 
       <% end %>
