@@ -3,15 +3,19 @@
 
 .nav-title {
   color: #FFFFFF;
-  display: inline-block;
-  float: right;
-  text-align: center;
-  margin-bottom: 15px;
+  position: absolute;
+  left: 25%;
 }
 
 .btn {
   margin-top: 15px;
 }
+
+.btn-right {
+  float: right;
+  display: block;
+}
+
 body { padding-top: 50px; }
 
 .title {

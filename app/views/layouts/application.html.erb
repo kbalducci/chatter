@@ -10,10 +10,11 @@
 
     <nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
     <div class="container">
-    <div><h3 class="nav-title"> Chatter   <span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span>  Chatter   <span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span>  Chatter   <span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span>  Chatter   <span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span> Chatter   <span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span>  Chatter   <span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span>  Chatter   <span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span>  Chatter   </h3></div>
-      <button type="button" class="btn btn-default navbar-btn"><%= link_to 'Home', root_path %></button>
-      <button type="button" class="btn btn-default navbar-btn"><%= link_to 'View All Users', users_path %></button>
+      <div><h3 class="nav-title"> Chatter   <span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span>  Chatter   <span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span>  Chatter   <span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span>  Chatter   <span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span> Chatter   <span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span>  Chatter   <span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span>  Chatter   </h3></div>
 
+      <button type="button" class="btn btn-default navbar-btn btn-left"><%= link_to 'Home', root_path %></button>
+      <button type="button" class="btn btn-default navbar-btn btn-left"><%= link_to 'View All Users', users_path %></button>
+      <button type="button" class="btn btn-default navbar-btn btn-right"><%= link_to 'Create Chat', root_path %></button>
     </div>
 
   </nav>

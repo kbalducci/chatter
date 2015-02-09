@@ -5,7 +5,7 @@ class HomeController < ApplicationController
     @user = User.first
     # @user = User.find(params[:id])
     # @chat = Chat.new
-    @chats = Chat.all
+    @chats = Chat.all.order(:created_at)
     @users = User.all
     # @chats = chats.where(user_id:@user_id)
     # chats = Chat.all
