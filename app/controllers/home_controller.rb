@@ -1,14 +1,10 @@
 class HomeController < ApplicationController
+protect_from_forgery with: :exception
 
   def index
-    # @user = User.new
     @user = User.first
-    # @user = User.find(params[:id])
-    # @chat = Chat.new
     @chats = Chat.all.order("created_at DESC")
     @users = User.all
-    # @chats = chats.where(user_id:@user_id)
-    # chats = Chat.all
   end
 
 
@@ -72,5 +68,6 @@ class HomeController < ApplicationController
     def chat_params
       params.require(:user).permit(:user_id, :message)
     end
+
 
 end

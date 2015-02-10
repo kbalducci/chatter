@@ -8,8 +8,11 @@
 </head>
 <body>
 
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+  <% if user_signed_in? %>
+      <p class="notice"><%= notice %></p>
+    <% else %>
+      <p class="alert"><%= alert %></p>
+    <% end %>
 
 
 
@@ -26,11 +29,11 @@
 
   </nav>
 
-<% if user_signed_in? %>
+
   <%= link_to 'Logout', destroy_user_session_path(@current_user), method: :delete %>
-  <% else %>
+
   <%= link_to 'Sign In', new_user_session_path %>
-  <% end %>
+
 
     <%= yield %>
 
