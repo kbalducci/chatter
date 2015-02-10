@@ -8,15 +8,6 @@ protect_from_forgery with: :exception
   end
 
 
-
-  # def set_new_user
-  #   @new_user = User.new
-  # end
-
-  # def set_new_chat
-  #   @new_chat = Chat.new
-  # end
-
   def new
     @user = User.new
     @chat = Chat.new
@@ -43,7 +34,6 @@ protect_from_forgery with: :exception
     respond_to do |format|
       if @user.save
         format.html { render chats_index_path, notice: 'User was successfully created.' }
-        # format.html { render root_path, notice: 'User was successfully created.' }
         format.json { render json: @user, status: :created, location: @user }
       else
         format.html { render "home/index" }

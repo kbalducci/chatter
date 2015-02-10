@@ -1,8 +1,7 @@
-<%= simple_form_for([@user, @new_chat], remote: true) do |f| %>
+<%= simple_form_for([current_user, Chat.new], remote: true) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :user_id, collection: user_collection %>
     <%= f.input :message %>
   </div>
 

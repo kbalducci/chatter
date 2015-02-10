@@ -37,14 +37,6 @@ class ChatsController < ApplicationController
   def delete
   end
 
-  # def destroy
-  #   @chat.destroy
-  #   respond_to do |format|
-  #     format.html { redirect_to chats_url, notice: 'Chat was successfully destroyed.' }
-  #     format.json { head :no_content }
-  #   end
-  # end
-
   private
     def set_chat
       @chat = Chat.find(params[:id])
