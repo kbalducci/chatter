@@ -9,13 +9,13 @@ protect_from_forgery with: :exception
 
 
 
-  def set_new_user
-    @new_user = User.new
-  end
+  # def set_new_user
+  #   @new_user = User.new
+  # end
 
-  def set_new_chat
-    @new_chat = Chat.new
-  end
+  # def set_new_chat
+  #   @new_chat = Chat.new
+  # end
 
   def new
     @user = User.new
