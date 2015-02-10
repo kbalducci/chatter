@@ -33,7 +33,7 @@ class HomeController < ApplicationController
     respond_to do |format|
       if @chat.save
         format.html { redirect_to root_path, notice: 'Chat was successfully created.' }
-        format.json { render json: @chat, status: :created, location: @chat }
+        format.json { render json: @chat.as_json, status: :created, location: @chat }
       else
         format.html { render :new }
         format.json { render json: @chat.errors, status: :unprocessable_entity }
@@ -47,6 +47,7 @@ class HomeController < ApplicationController
     respond_to do |format|
       if @user.save
         format.html { render chats_index_path, notice: 'User was successfully created.' }
+        # format.html { render root_path, notice: 'User was successfully created.' }
         format.json { render json: @user, status: :created, location: @user }
       else
         format.html { render "home/index" }

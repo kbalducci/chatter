@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [ :edit, :update, :destroy]
+  before_action :authenticate_user!, except: :index
 
   def index
     @users = User.all.order(:profile_name)
